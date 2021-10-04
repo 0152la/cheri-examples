@@ -31,8 +31,6 @@ switch_compartment:
     //
     // Arguments are arranged as follows:
     //
-    //      w0: a
-    //      w1: b
     //      x2: stack   (pointer, not capability, since this is hybrid)
     //      x3: size
     //
@@ -71,8 +69,7 @@ switch_compartment:
     // (in hybrid mode), unwinding would fail anyway.
 
     // Clean capabilities left in arguments.
-    mov w0, w0  // `a`
-    mov w1, w1  // `b`
+    
     bl (clean + 8)
     bl compartment_simple_fun
     // Clean capabilities left in the return value.
