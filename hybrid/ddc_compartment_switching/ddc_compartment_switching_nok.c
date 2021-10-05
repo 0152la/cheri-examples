@@ -35,6 +35,6 @@ int compartment_simple_fun()
 	int32_t *__capability ddc_cap = cheri_ddc_get();
 	// This function can access only 2000 bytes, i.e. `compartment_size`
 	// So the following will go over its compartment bounds
-	assert(ddc_cap[700] == 8);
+	ddc_cap[700] = 12;
 	return 0;
 }
