@@ -29,7 +29,7 @@ done
 
 echo "Checking that all the hybrid examples build on Morello..."
 platform='morello-hybrid'
-for dir in hybrid; do
+for dir in hybrid hybrid/ddc_compartment_switching; do
     pushd "$dir"
         make -f Makefile.$platform clean
         make -f Makefile.$platform all
