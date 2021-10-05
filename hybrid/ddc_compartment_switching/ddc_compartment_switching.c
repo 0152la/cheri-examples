@@ -21,19 +21,18 @@ extern int switch_compartment(void *stack, size_t size);
 
 int main()
 {
-	int *simple_block = malloc(5000);
+	int32_t *simple_block = malloc(5000);
 	size_t compartment_size = 2000;
-	simple_block[1000] = 100;
+	simple_block[483] = 800;
 	switch_compartment(simple_block, compartment_size);
 	return 0;
 }
 
 int compartment_simple_fun()
 {
-	int *__capability ddc_cap = cheri_ddc_get();
+	int32_t *__capability ddc_cap = cheri_ddc_get();
 	// This function can access only 2000 bytes, i.e. `compartment_size`
 	assert(cheri_tag_get(ddc_cap) && cheri_length_get(ddc_cap) == 2000);
-	// `ddc_cap` is indeed valid, so we should be able to derefence it
-	assert(ddc_cap[1000]);
+	assert(ddc_cap[483] == 800);
 	return 0;
 }
