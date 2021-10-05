@@ -31,20 +31,20 @@ switch_compartment:
     //
     // Arguments are arranged as follows:
     //
-    //      x2: stack   (pointer, not capability, since this is hybrid)
-    //      x3: size
+    //      x0: stack   (pointer, not capability, since this is hybrid)
+    //      x1: size
     //
     // The result will be returned in w0.
 
     // Derive a new DDC to cover the new stack.
     mrs       c10, DDC
-    scvalue   c11, c10, x2
-    scbndse   c11, c11, x3
+    scvalue   c11, c10, x0
+    scbndse   c11, c11, x1
     msr       DDC, c11
 
     // Replace the stack pointer.
     mov       x12, sp
-    add       sp, x2, x3
+    add       sp, x0, x1
 
     // Save the old DDC, stack pointer and return address on the new stack, so
     // we can restore it when we return..
