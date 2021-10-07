@@ -8,8 +8,6 @@
 .global switch_compartment
 .type switch_compartment, "function"
 switch_compartment:
-    // int switch_compartment(int a, int b, void * stack, size_t size)
-    //
     // For the purposes of this demo, `stack + size` must be 16-byte-aligned, so
     // that it is suitable for use as a stack pointer with no additional
     // alignment logic. In addition, the range [stack, stack+size) must be
