@@ -3,7 +3,7 @@
  * It allocates a block of memory (5000 bytes) but only the first
  * 2000 are accessible by `compartment_simple_fun`.
  *
- * This program rises an exception because we try to access an
+ * This program raises an exception because we try to access an
  * `int32_t` which occurs to be out of the compartment's bounds.
  ***/
 

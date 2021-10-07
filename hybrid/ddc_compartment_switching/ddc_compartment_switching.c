@@ -3,7 +3,7 @@
  * It allocates a block of memory (5000 bytes) but only the first
  * 2000 are accessible by `compartment_simple_fun`.
  *
- * This program does not rise any exception because we verify we can
+ * This program does not raise any exception because we verify we can
  * read an `int32_t` allocated in those first 2000 bytes.
  ***/
 
