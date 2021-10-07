@@ -69,7 +69,7 @@ switch_compartment:
     bl compartment_simple_fun
     // Clean capabilities left in the return value.
     mov w0, w0
-    bl (clean + 4)
+    bl clean
 
     // Restore the caller's context and compartment.
     ldr       c10, [sp]
