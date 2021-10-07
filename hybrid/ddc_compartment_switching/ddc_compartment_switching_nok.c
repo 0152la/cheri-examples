@@ -23,18 +23,18 @@ extern int switch_compartment(void *stack, size_t size);
 
 int main()
 {
-	int32_t *simple_block = malloc(5000);
+	uint8_t *simple_block = malloc(5000);
 	size_t compartment_size = 2000;
-	simple_block[700] = 8;
+	simple_block[2500] = 8;
 	switch_compartment(simple_block, compartment_size);
 	return 0;
 }
 
 int compartment_simple_fun()
 {
-	int32_t *__capability ddc_cap = cheri_ddc_get();
+	uint8_t *__capability ddc_cap = cheri_ddc_get();
 	// This function can access only 2000 bytes, i.e. `compartment_size`
 	// So the following will go over its compartment bounds
-	ddc_cap[700] = 12;
+	ddc_cap[2500] = 12;
 	return 0;
 }
