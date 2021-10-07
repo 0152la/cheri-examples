@@ -3,7 +3,7 @@
  * It allocates a block of memory (5000 bytes) but only the first
  * 2000 are accessible by `compartment_simple_fun`.
  *
- * This program does not raise an exception because it explicitly performs 
+ * This program does not raise an exception because it explicitly performs
  * loads/stores within the compartment.
  ***/
 
