@@ -9,7 +9,6 @@ ifndef BINDIR
 $(error build/Makefile.vars should set BINDIR)
 endif
 
-SHARED_SOURCES ?=
 CFILES ?= $(wildcard *.c)
 HFILES ?= $(wildcard include/*.h)
 BINS := $(patsubst %.c,$(BINDIR)/%,$(CFILES))
