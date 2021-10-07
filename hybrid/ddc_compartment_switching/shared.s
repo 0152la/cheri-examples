@@ -45,7 +45,7 @@ switch_compartment:
     add       sp, x0, x1
 
     // Save the old DDC, stack pointer and return address on the new stack, so
-    // we can restore it when we return..
+    // we can restore it when we return.
     // This is the leaky part of the compartmentalisation. If strict
     // compartments are required, some other technique must be used, such as a
     // privileged switcher or sealing mechanism (e.g. using `ldpblr`).
@@ -86,7 +86,7 @@ switch_compartment:
 
     // Inner helper for cleaning capabilities from registers, either side of an
     // AAPCS64 function call where some level of distrust exists between caller
-    // and callee..
+    // and callee.
     //
     // Depending on the trust model, this might not be required, but the process
     // is included here for demonstration purposes. Note that if data needs to
