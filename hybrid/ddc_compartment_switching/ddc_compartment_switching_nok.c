@@ -4,7 +4,7 @@
  * 2000 are accessible by `compartment_simple_fun`.
  *
  * This program raises an exception because we try to access an
- * `int32_t` which occurs to be out of the compartment's bounds.
+ * `int32_t` which is out of the compartment's bounds.
  ***/
 
 #include "../../include/common.h"
