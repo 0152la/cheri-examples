@@ -65,7 +65,7 @@ switch_compartment:
     // Note that this is _not_ an AAPCS64 frame record, even though it looks a
     // bit like one. We don't touch FP here, and since it is not a capability
     // (in hybrid mode), unwinding would fail anyway.
-    bl (clean + 8)
+    bl clean
     bl compartment_simple_fun
     // Clean capabilities left in the return value.
     mov w0, w0
