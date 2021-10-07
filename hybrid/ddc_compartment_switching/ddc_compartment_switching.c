@@ -35,7 +35,6 @@ int main()
 int compartment_simple_fun()
 {
 	int32_t *__capability ddc_cap = cheri_ddc_get();
-	// This function can read only 2000 bytes, i.e. `compartment_size`
 	assert(cheri_tag_get(ddc_cap) && cheri_length_get(ddc_cap) == 2000);
 	assert(ddc_cap[483] == 800);
 	return 0;
